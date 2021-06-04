@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tổng quan :: Devebot Platform</title>
+    <link rel="canonical" href="https://devebot.com/docs/app-restfetch/index.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="stylesheet" href="../_/css/site-extra.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://devebot.com">Devebot</a>
+        <span class="separator">//</span>
+        <a href="https://devebot.com/docs">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Components</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/devebot/devebot">Devebot</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Plugins</strong></div>
+            <a class="navbar-item" href="https://devebot.com/docs/app-restfront">Restfront</a>
+            <a class="navbar-item" href="https://devebot.com/docs/app-restfetch">Restfetch</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://github.com/devebot/devebot/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://discord.gg/5A4mW6r55D">Chat (Discord)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="app-restfetch" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Devebot Plugin: Restfetch</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Tổng quan</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Devebot Plugin: Restfetch</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../app-errorlist/index.html">Devebot Plugin: Errorlist</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../app-errorlist/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Devebot Plugin: Restfetch</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../app-restfront/index.html">Devebot Plugin: Restfront</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../app-restfront/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../app-restguard/index.html">Devebot Plugin: Restguard</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../app-restguard/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Devebot Plugin: Restfetch</a></li>
+    <li><a href="index.html">Tổng quan</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/app-restfetch/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Tổng quan</h1>
+<div class="paragraph">
+<p><code>Restfetch</code> là một thành phần cắm thêm (plugin) của Devebot Platform.
+Mục đích của Restfetch là định nghĩa các đối tượng service mà trong đó, các hàm của nó sẽ được ghép nối (mappings) đến các lời gọi Rest API. Việc cấu hình ghép nối được thực hiện thông qua một tệp cấu hình JSON (JSON configuration file).</p>
+</div>
+<div class="paragraph">
+<p>Restfetch thường được sử dụng trong trường hợp nhà phát triển muốn bao bọc các lời gọi tới Rest API bằng các function để:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>che chắn bớt những phức tạp trong việc sử dụng Rest API,</p>
+</li>
+<li>
+<p>đồng nhất các Rest API của các nhà cung cấp khác nhau, có cách gọi khác nhau nhưng lại cung cấp chức năng tương đồng nhau (ví dụ gitlab và github, các dịch vụ gửi SMS, &#8230;&#8203;),</p>
+</li>
+<li>
+<p>tách bạch việc sử dụng với quá trình cập nhật, nâng cấp, sửa đổi về sau của Rest API;</p>
+</li>
+</ul>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>"It is not the strength of waves that shapes the rocks, but it is their persistence."</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
