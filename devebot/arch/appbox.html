@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Appbox :: Devebot Platform</title>
+    <link rel="canonical" href="https://devebot.com/docs/devebot/arch/appbox.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/site-extra.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://devebot.com">Devebot</a>
+        <span class="separator">//</span>
+        <a href="https://devebot.com/docs">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Components</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/devebot/devebot">Devebot</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Plugins</strong></div>
+            <a class="navbar-item" href="https://devebot.com/docs/app-restfront">Restfront</a>
+            <a class="navbar-item" href="https://devebot.com/docs/app-restfetch">Restfetch</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://github.com/devebot/devebot/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://discord.gg/5A4mW6r55D">Chat (Discord)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="devebot" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Devebot Core</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Tổng quan</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="appbox.html">Appbox</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Devebot Core</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Devebot Core</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../app-errorlist/index.html">Devebot Plugin: Errorlist</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../app-errorlist/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../app-restfetch/index.html">Devebot Plugin: Restfetch</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../app-restfetch/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../app-restfront/index.html">Devebot Plugin: Restfront</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../app-restfront/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../app-restguard/index.html">Devebot Plugin: Restguard</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../app-restguard/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Devebot Core</a></li>
+    <li><a href="../index.html">Tổng quan</a></li>
+    <li><a href="appbox.html">Appbox</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/devebot/docs/modules/ROOT/pages/arch/appbox.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Appbox</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/devebot-application-architecture.png" alt="devebot application architecture">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Appbox</strong> là một nodejs package chứa các thành phần sau:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tệp mô tả package (Package descriptor file - tức là tệp <code>package.json</code>)</p>
+</li>
+<li>
+<p>Các tệp application entrypoint file(s)</p>
+</li>
+<li>
+<p>Cấu hình (configuration)</p>
+</li>
+<li>
+<p>Các đối tượng routines</p>
+</li>
+<li>
+<p>Các đối tượng services</p>
+</li>
+<li>
+<p>Các đối tượng servlets</p>
+</li>
+<li>
+<p>Các thư viện plugins</p>
+</li>
+<li>
+<p>Các thư viện bridges</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_package_descriptor_file"><a class="anchor" href="#_package_descriptor_file"></a>Package descriptor file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Package descriptor file chỉ là đơn thuần là một file <a href="https://docs.npmjs.com/files/package.json">package.json</a> của <code>npm</code>.
+Trong trường hợp package là <code>appbox</code>, ngoài việc trường <code>dependencies</code> chứa khai báo về <code>devebot</code> và các <code>plugins</code> phụ thuộc,
+package descriptor file cần khai báo keyword chứa từ khóa <code>devebot</code> và <code>devebot-application</code> để tiện cho việc tìm kiếm.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "name": "beret",
+    "version": "0.1.0",
+    "description": "Node.js Socket.io &amp; Restful API Simulator",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+    },
+    "keywords": [ <i class="conum" data-value="1"></i><b>(1)</b>
+        "devebot",
+        "devebot-application"
+    ],
+    "author": "devebot",
+    "license": "MIT",
+    "dependencies": {
+        "devebot": "^0.2.7"
+    },
+    "devDependencies": {
+        "mocha": "^5.2.0"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>keywords chứa từ khóa <code>devebot</code> và <code>devebot-application</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appbox_entrypoint_files"><a class="anchor" href="#_appbox_entrypoint_files"></a>Appbox entrypoint file(s)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mỗi <code>appbox</code> có ít nhất một tệp <code>.js</code> là điểm vào của chương trình.
+Tệp này có nhiệm vụ khai báo sử dụng thư viện <code>devebot</code> đồng thời nạp toàn bộ <code>configuration</code>, <code>plugins</code>, <code>bridges</code> và chương trình chạy.
+Quá trình này được thực hiện thông qua static method <code>launchApplication()</code> của <code>devebot</code>.
+Sau khi nạp xong, application sẽ được kích hoạt thông qua phương thức <code>start()</code> của đối tượng Server được tham chiếu qua thuộc tính <code>server</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// server.js  <i class="conum" data-value="1"></i><b>(1)</b>
+'use strict';
+
+var devebot = require('devebot');
+
+var app = devebot.launchApplication({
+    appRootPath: __dirname
+}, [
+    'app-tracelog',
+    'app-webweaver'
+], [
+    'devebot-co-mysql',
+    'devebot-co-redis'
+]);
+
+if (require.main === module) app.server.start();
+
+module.exports = app;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The main property in <code>package.json</code> defines default application entry point.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cấu_hình_configuration"><a class="anchor" href="#_cấu_hình_configuration"></a>Cấu hình (Configuration)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cấu hình của ứng dụng được combine từ một chuỗi các tệp cấu hình nạp đè lên nhau:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/configuration-loading-flow.png" alt="configuration loading flow">
+</div>
+</div>
+<div class="paragraph">
+<p>Trình tự nạp tệp cấu hình được thực hiện như sau:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>config/profile.js</code> của <code>framework</code> được nạp đầu tiên, vào nhóm config <code>profile</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>"It is not the strength of waves that shapes the rocks, but it is their persistence."</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tổng quan :: Devebot Platform</title>
-    <link rel="canonical" href="https://devebot.com/docs/app-restguard/index.html">
+    <link rel="canonical" href="https://devebot.com/docs/devebot/index.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="stylesheet" href="../_/css/site-extra.css">
@@ -52,17 +52,23 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="app-restguard" data-version="master">
+<div class="nav-container" data-component="devebot" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">Devebot Plugin: Restguard</a></h3>
+    <h3 class="title"><a href="index.html">Devebot Core</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Tổng quan</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="arch/appbox.html">Appbox</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -71,15 +77,15 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Devebot Plugin: Restguard</span>
+    <span class="title">Devebot Core</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <a class="title" href="../devebot/index.html">Devebot Core</a>
+    <li class="component is-current">
+      <a class="title" href="index.html">Devebot Core</a>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../devebot/index.html">master</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
         </li>
       </ul>
     </li>
@@ -107,11 +113,11 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">Devebot Plugin: Restguard</a>
+    <li class="component">
+      <a class="title" href="../app-restguard/index.html">Devebot Plugin: Restguard</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+        <li class="version is-latest">
+          <a href="../app-restguard/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -123,14 +129,14 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../devebot/index.html" class="home-link"></a>
+  <a href="index.html" class="home-link is-current"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Devebot Plugin: Restguard</a></li>
+    <li><a href="index.html">Devebot Core</a></li>
     <li><a href="index.html">Tổng quan</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/app-restguard/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/devebot/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -139,9 +145,51 @@
 <article class="doc">
 <h1 class="page">Tổng quan</h1>
 <div class="paragraph">
-<p><strong>Restguard</strong> là một thành phần cắm thêm (plugin) của Devebot Platform.
-Mục đích của <strong>Restguard</strong> là chắn các lời gọi Rest API (từ bên ngoài vào Webserver, trong hệ sinh thái Devebot, thường là Restfront), sau đó kiểm tra xem các lời gọi Rest API này có được xác thực hay không.
-Nếu đã xác thực hợp lệ, Restguard sẽ "thả" cho lời gọi thực hiện tiếp. Ngược lại, Restguard sẽ trả lại lỗi dưới dạng mã lỗi của HTTP Status.</p>
+<p>Devebot là một khung ứng dụng dịch vụ nhỏ xây dựng trên nền tảng Nodejs. Nó được thiết kế theo một số nguyên tắc quan trọng:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tính mô đun cao (High modularity)</p>
+</li>
+<li>
+<p>Có thể tái sử dụng (Reusable)</p>
+</li>
+<li>
+<p>Dễ dàng tích hợp (Easy to integrate)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devebot-architecture.png" alt="devebot architecture">
+</div>
+</div>
+<div class="paragraph">
+<p>Dựa trên khung ứng dụng <code>devebot</code>, các ứng dụng dịch vụ sẽ phân tách thành các <code>plugin</code>, mỗi plugin sẽ triển khai một tính năng cụ thể.
+Khung ứng dụng cung cấp các <em>cầu nối</em> bao bọc hoặc kết nối với các dịch vụ khác (dịch vụ web, kết nối cơ sở dữ liệu, &#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>Nhờ vậy, các ứng dụng dịch vụ có thể tận dụng được các chức năng cơ bản bao gồm:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>nạp và kiểm tra tính hợp lệ của tệp cấu hình;</p>
+</li>
+<li>
+<p>kiểm tra cấu hình tổng thể theo chế độ dry-run;</p>
+</li>
+<li>
+<p>tận dụng các một phần chức năng đã được xây dựng và sử dụng lâu dài ổn định thông qua các <code>plugin</code>;</p>
+</li>
+<li>
+<p>tận dụng các kết nối phổ biến được cung cấp sẵn thông qua các <em>cầu nối</em>;</p>
+</li>
+<li>
+<p>dễ dàng tháo lắp, thay thế các bộ phận hoặc mở rộng chức năng các bộ phận mà không gây ảnh hưởng đến toàn bộ chức năng.</p>
+</li>
+</ul>
 </div>
 </article>
   </div>
