@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tổng quan :: Devebot Platform</title>
-    <link rel="canonical" href="https://devebot.com/docs/devebot/index.html">
+    <title>Kết cấu phần mềm :: Devebot Platform</title>
+    <link rel="canonical" href="https://devebot.com/docs/devebot/concepts.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="stylesheet" href="../_/css/site-extra.css">
@@ -61,10 +61,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Tổng quan</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="concepts.html">Kết cấu kỹ thuật</a>
 <ul class="nav-list">
@@ -132,109 +132,44 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Devebot Core</a></li>
-    <li><a href="index.html">Tổng quan</a></li>
+    <li><a href="concepts.html">Kết cấu kỹ thuật</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/devebot/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/acegik/projects/devebot/devebot/docs/modules/ROOT/pages/concepts.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Tổng quan</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Devebot là một khung ứng dụng dịch vụ nhỏ xây dựng trên nền tảng Nodejs. Nó được thiết kế theo một số nguyên tắc quan trọng:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Tính mô đun cao (High modularity)</p>
-</li>
-<li>
-<p>Có thể tái sử dụng (Reusable)</p>
-</li>
-<li>
-<p>Dễ dàng tích hợp (Easy to integrate)</p>
-</li>
-</ul>
-</div>
+<h1 class="page">Kết cấu phần mềm</h1>
 <div class="imageblock">
 <div class="content">
 <img src="_images/devebot-architecture.png" alt="devebot architecture">
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_những_lợi_ích_cơ_bản"><a class="anchor" href="#_những_lợi_ích_cơ_bản"></a>Những lợi ích cơ bản</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Dựa trên khung ứng dụng <code>devebot</code>, các ứng dụng dịch vụ sẽ phân tách thành các <code>plugin</code>, mỗi plugin sẽ triển khai một tính năng cụ thể.
-Khung ứng dụng cung cấp các <em>cầu nối</em> bao bọc hoặc kết nối với các dịch vụ khác (dịch vụ web, kết nối cơ sở dữ liệu, &#8230;&#8203;).</p>
+<p>Theo như hình vẽ minh họa, kết cấu kỹ thuật của <code>devebot</code> gồm các thành phần chính sau:</p>
 </div>
-<div class="paragraph">
-<p>Nhờ vậy, các ứng dụng dịch vụ có thể tận dụng được các chức năng cơ bản bao gồm:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>nạp và kiểm tra tính hợp lệ của tệp cấu hình;</p>
+<p><strong>Devebot core</strong>: gói khung ứng dụng lõi;</p>
 </li>
 <li>
-<p>kiểm tra cấu hình tổng thể theo chế độ dry-run;</p>
+<p><strong>Appbox</strong>: gói ứng dụng;</p>
 </li>
 <li>
-<p>tận dụng các một phần chức năng đã được xây dựng và sử dụng lâu dài ổn định thông qua các <code>plugin</code>;</p>
+<p><strong>Bridges</strong>: các gói chức năng cầu nối;</p>
 </li>
 <li>
-<p>tận dụng các kết nối phổ biến được cung cấp sẵn thông qua các <em>cầu nối</em>;</p>
+<p><strong>Plugins</strong>: các gói chức năng bổ sung;</p>
 </li>
-<li>
-<p>dễ dàng tháo lắp, thay thế các bộ phận hoặc mở rộng chức năng các bộ phận mà không gây ảnh hưởng đến toàn bộ chức năng.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_làm_chủ_khung_ứng_dụng"><a class="anchor" href="#_làm_chủ_khung_ứng_dụng"></a>Làm chủ khung ứng dụng</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Những gợi ý sau đây được đưa ra nhằm giúp người dùng (là các lập trình viên có ý định sử dụng devebot) tiếp cận nhanh chóng từ bắt đầu đến mức làm chủ khung ứng dụng. Bao gồm các bước sau:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Khởi nhập nhanh thông qua ví dụ đơn giản;</p>
-</li>
-<li>
-<p>Tìm hiểu tổng quan về khung ứng dụng;</p>
-</li>
-<li>
-<p>Tìm hiểu về cấu trúc tổ chức và các thành phần của khung ứng dụng;</p>
-</li>
-<li>
-<p>Tìm hiểu về công cụ dòng lệnh, tham số, cấu hình;</p>
-</li>
-<li>
-<p>Tìm hiểu về các tính năng khung ứng dụng cung cấp;</p>
-</li>
-<li>
-<p>Tìm hiểu về các plugin thường xuyên sử dụng;</p>
-</li>
-<li>
-<p>Đóng góp vào quá trình phát triển khung ứng dụng;</p>
-</li>
-</ul>
-</div>
-</div>
+</ol>
 </div>
 </article>
   </div>

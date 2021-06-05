@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Appbox :: Devebot Platform</title>
+    <title>Appbox - gói ứng dụng :: Devebot Platform</title>
     <link rel="canonical" href="https://devebot.com/docs/devebot/arch/appbox.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -62,8 +62,11 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../index.html">Tổng quan</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts.html">Kết cấu kỹ thuật</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="appbox.html">Appbox</a>
@@ -133,7 +136,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Devebot Core</a></li>
-    <li><a href="../index.html">Tổng quan</a></li>
+    <li><a href="../concepts.html">Kết cấu kỹ thuật</a></li>
     <li><a href="appbox.html">Appbox</a></li>
   </ul>
 </nav>
@@ -144,7 +147,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Appbox</h1>
+<h1 class="page">Appbox - gói ứng dụng</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="imageblock">
@@ -176,10 +179,10 @@
 <p>Các đối tượng servlets</p>
 </li>
 <li>
-<p>Các thư viện plugins</p>
+<p>Các gói thư viện plugins</p>
 </li>
 <li>
-<p>Các thư viện bridges</p>
+<p>Các gói thư viện bridges</p>
 </li>
 </ol>
 </div>
@@ -229,7 +232,7 @@ package descriptor file cần khai báo keyword chứa từ khóa <code>devebot<
 </div>
 </div>
 <div class="sect1">
-<h2 id="_appbox_entrypoint_files"><a class="anchor" href="#_appbox_entrypoint_files"></a>Appbox entrypoint file(s)</h2>
+<h2 id="_application_entrypoint_files"><a class="anchor" href="#_application_entrypoint_files"></a>Application entrypoint file(s)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Mỗi <code>appbox</code> có ít nhất một tệp <code>.js</code> là điểm vào của chương trình.
@@ -244,15 +247,18 @@ Sau khi nạp xong, application sẽ được kích hoạt thông qua phương t
 
 var devebot = require('devebot');
 
-var app = devebot.launchApplication({
-    appRootPath: __dirname
-}, [
-    'app-tracelog',
-    'app-webweaver'
-], [
-    'devebot-co-mysql',
-    'devebot-co-redis'
-]);
+var app = devebot.launchApplication(
+    {
+        appRootPath: __dirname
+    },
+    [
+        'app-tracelog',
+        'app-webweaver'
+    ],
+    [
+        'devebot-co-mysql',
+        'devebot-co-redis'
+    ]);
 
 if (require.main === module) app.server.start();
 
@@ -281,15 +287,53 @@ module.exports = app;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Trình tự nạp tệp cấu hình được thực hiện như sau:</p>
+<p>Trình tự nạp tệp cấu hình cho nhóm <code>profile</code> được thực hiện như sau:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>config/profile.js</code> của <code>framework</code> được nạp đầu tiên, vào nhóm config <code>profile</code>.</p>
+<p>Khới tạo một đối tượng rỗng để lưu cấu hình <code>profile</code> chung;</p>
+</li>
+<li>
+<p>Tệp cấu hình <code>config/profile.js</code> của <code>framework</code> được nạp đầu tiên, ghép các giá trị vào cấu hình <code>profile</code> chung;</p>
+</li>
+<li>
+<p>Tệp cấu hình <code>config/profile.js</code> của các plugin sẽ được nạp và ghép vào cấu hình <code>profile</code> chung;</p>
+</li>
+<li>
+<p>Tệp cấu hình <code>config/profile.js</code> của appbox sẽ được nạp và ghép vào cấu hình <code>profile</code> chung;</p>
+</li>
+<li>
+<p>Nếu có khai báo bổ sung cấu hình profile thông qua biến môi trường <code>$DEVEBOT_PROFILE</code>, tệp <code>config/profile_$DEVEBOT_PROFILE.js</code> của appbox sẽ được nạp và ghép vào cấu hình <code>profile</code> chung;</p>
+</li>
+<li>
+<p>Nếu có khai báo bổ sung thư mục mở rộng cấu hình <code>$DEVEBOT_CONFIG_DIR</code> và tên môi trường cấu hình <code>$DEVEBOT_CONFIG_ENV</code>, thì các tệp cấu hình trong đường dẫn thư mục <code>$DEVEBOT_CONFIG_DIR/$DEVEBOT_CONFIG_ENV</code> sẽ được nạp và ghép vào cấu hình <code>profile</code> chung.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Tương tự như vậy đối với trình tự nạp tệp cấu hình cho nhóm cấu hình <code>sandbox</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_các_đối_tượng_routines"><a class="anchor" href="#_các_đối_tượng_routines"></a>Các đối tượng Routines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Các đối tượng Rountine được định nghĩa để sử dụng nội bộ bên trong khung ứng dụng Devebot.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_các_đối_tượng_services"><a class="anchor" href="#_các_đối_tượng_services"></a>Các đối tượng services</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_các_đối_tượng_servlets"><a class="anchor" href="#_các_đối_tượng_servlets"></a>Các đối tượng servlets</h2>
+<div class="sectionbody">
+
 </div>
 </div>
 </article>
