@@ -204,6 +204,47 @@ Khung ứng dụng cung cấp các <em>cầu nối</em> bao bọc hoặc kết n
 </div>
 </div>
 <div class="sect1">
+<h2 id="_tăng_tốc_quá_trình_phát_triển_phần_mềm"><a class="anchor" href="#_tăng_tốc_quá_trình_phát_triển_phần_mềm"></a>Tăng tốc quá trình phát triển phần mềm</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/devebot-appbox-best-practices.png" alt="devebot appbox best practices">
+</div>
+</div>
+<div class="paragraph">
+<p>Sơ đồ trên minh họa kỹ thuật áp dụng Khung ứng dụng devebot để xây dựng Restful API Service:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>BA (Business Analysist) sẽ mô tả các chức năng (functions) của ứng dụng dưới dạng User Stories (theo phương pháp Agile/Scrum) hoặc Use Cases (theo phương pháp Waterfall). Trong quá trình phân rã chức năng, BA sẽ thảo luận với toàn team (bao gồm Dev, DevOps, QA, Testers, IT, Product Owner, Scrum Master) để thống nhất các chức năng cần thực hiện và phân rã tasks.</p>
+</li>
+<li>
+<p>BA có thể kết hợp cùng Developers để tạo nhanh một prototype (nguyên mẫu) dưới dạng Mock-service bằng cách sử dụng Devebot Framework, Restfront, Mock (texture); DevOps có thể hỗ trợ bước này để tạo Deployment Script.</p>
+</li>
+<li>
+<p>Theo nhánh này, BA có thể cộng tác cùng QA để xây dựng các Test Cases dựa trên bộ API này. Việc này thực hiện song song với quá trình Dev để đẩy nhanh tiến độ cũng như tận dụng thời gian nhàn rỗi giai đoạn đầu dự án;</p>
+</li>
+<li>
+<p>Song song việc đó, sau khi làm rõ tasks, Devs sẽ thực hiện việc lập trình nhanh phần chức năng dưới dạng Devebot Service/functions mà không cần quan tâm đến Rest API hoặc mã lệnh chuyển đổi từ HTTP requests &#8594; function &#8594; HTTP Responses; Quá trình này nên có thêm UnitTest hoặc BehaviorTest (BDD)</p>
+</li>
+<li>
+<p>Khi đã sẵn sàng Rest API mock + Service/functions code, Dev hoặc DevOps có thể mô tả Mappings để nối từ Rest API vào Service/functions. Sau khi mô tả xong mappings (dưới dạng config), chỉ việc switch qua lại giữa hai chế độ này để thử nghiệm (demo) hoặc kiểm thử (testing);</p>
+</li>
+<li>
+<p>Thay thế bản build với service thật lên beta server thay cho bản Mock, QA+Testers thực hiện việc test và quyết định Release;</p>
+</li>
+<li>
+<p>IT/SysOps deploy lên server production;</p>
+</li>
+<li>
+<p>QA verify lại bản build và chính thức phát hành;</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_làm_chủ_khung_ứng_dụng"><a class="anchor" href="#_làm_chủ_khung_ứng_dụng"></a>Làm chủ khung ứng dụng</h2>
 <div class="sectionbody">
 <div class="paragraph">
