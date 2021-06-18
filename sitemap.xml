@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-datastore.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-errorlist.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-restfetch.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-restfront.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-restguard.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-sequence.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-app-tracelog.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://devebot.com/docs/sitemap-devebot.xml</loc>
+</sitemap>
+</sitemapindex>
